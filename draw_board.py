@@ -1,5 +1,4 @@
 import pygame
-
 import sys
 
 # Initialize Pygame
@@ -11,26 +10,27 @@ SCREEN_HEIGHT = 600
 TILE_SIZE = SCREEN_WIDTH // 8  # Chessboard is 8x8
 
 # Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+COLOR_1 = (216, 186, 134)
+COLOR_2 = (79, 43, 26)
 
 # Initialize the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Chessboard")
+pygame.display.set_caption("CheckMate AI")
+pygame.display.set_icon(pygame.image.load("assets/images/fav_icon.png"))
 
 
 def draw_chessboard():
-    """Draws an 8x8 chessboard."""
+    # Draws an 8x8 chessboard.
     for row in range(8):
         for col in range(8):
-            # Alternate between white and black squares
-            color = WHITE if (row + col) % 2 == 0 else BLACK
+            # Alternate between COLOR_1 and COLOR_2 squares
+            color = COLOR_1 if (row + col) % 2 == 0 else COLOR_2
             pygame.draw.rect(screen, color, (col * TILE_SIZE,
                              row * TILE_SIZE, TILE_SIZE, TILE_SIZE))
 
 
 def main():
-    """Main loop for the program."""
+    # Main loop for the program.
     clock = pygame.time.Clock()
 
     while True:
@@ -40,7 +40,7 @@ def main():
                 sys.exit()
 
         # Draw the chessboard
-        screen.fill(WHITE)  # Background
+        screen.fill(COLOR_1)  # Background
         draw_chessboard()
 
         # Update the display
