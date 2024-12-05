@@ -1,1 +1,1 @@
-# CheckMate AI
+# XOTelligence
