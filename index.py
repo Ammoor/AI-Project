@@ -1,6 +1,7 @@
 import pygame
 import sys
 from source import player_vs_player_board
+from source import player_vs_pc_board
 # Initialize Pygame
 pygame.init()
 
@@ -69,7 +70,7 @@ def main():
                 if pvp_button.collidepoint(mouse_pos):
                     player_vs_player_board.pvp_board()
                 elif pc_button.collidepoint(mouse_pos):
-                    print("Player vs PC selected")
+                    player_vs_pc_board.main()
 
         draw_main_menu()
 
